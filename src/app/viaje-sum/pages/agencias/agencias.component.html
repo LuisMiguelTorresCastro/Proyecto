@@ -1,0 +1,42 @@
+<h1>Agencias</h1>
+<mat-divider></mat-divider>
+<div class="grid bm-8">
+    <div *ngFor="let agencia of agencias" class="col-12 sm:col-4 md:col-3 xl:col-2">
+        <mat-card>
+            <mat-card-header>
+              <mat-card-title>{{ agencia.nomAge }}</mat-card-title>
+              <mat-card-subtitle>{{ agencia.TipAge }}</mat-card-subtitle>
+            </mat-card-header>
+
+            <!-- <img mat-card-image [src]="'assets/agencias/' + agencia.idAge + '.jpg'" [alt]="agencia.nomAge"> -->
+
+            <mat-card-content class="mt-2">
+              <h4>Dirección:</h4>
+              <p>
+                <strong>Calle:</strong> {{ agencia.dir }}
+                <br>
+                <strong>Teléfono:</strong> {{ agencia.telAge }}
+                <br>
+                <strong>Email:</strong> {{ agencia.emaAge }}
+                <br>
+                <strong>Descripción:</strong> {{ agencia.desAge || 'No disponible' }}
+                <br>
+                <strong>Localidad ID:</strong> {{ agencia.localidad_id }}
+              </p>
+            </mat-card-content>
+
+            <mat-divider></mat-divider>
+            <mat-card-actions>
+              <button mat-button mat-raised color="primary" [routerLink]="['/agencias/edit', agencia.idAge]">
+                <mat-icon>edit</mat-icon>
+                Editar
+              </button>
+              <span class="spacer"></span>
+              <button mat-button mat-raised [routerLink]="['/agencias', agencia.idAge]">
+                <mat-icon>more_horiz</mat-icon>
+                Más
+              </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

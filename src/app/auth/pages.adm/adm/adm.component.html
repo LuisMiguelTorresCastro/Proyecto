@@ -1,0 +1,37 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [ngStyle]="{ width: '250px' }">
+    <mat-toolbar color="primary">
+      <span>Panel de Administración</span>
+    </mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item routerLink="/Auth/regAgencia" (click)="sidenav.toggle()">
+        <mat-icon>add</mat-icon>
+        <span>Registrar Agencia</span>
+      </mat-list-item>
+      <mat-list-item routerLink="/users" (click)="sidenav.toggle()">
+        <mat-icon>people</mat-icon>
+        <span>Usuarios</span>
+      </mat-list-item>
+      <mat-list-item routerLink="/settings" (click)="sidenav.toggle()">
+        <mat-icon>settings</mat-icon>
+        <span>Configuración</span>
+      </mat-list-item>
+      <mat-list-item routerLink="/logout" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Salir</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <span>Bienvenido, Administrador</span>
+  </mat-toolbar>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

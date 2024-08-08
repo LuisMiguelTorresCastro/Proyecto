@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="./regAgencia.component.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Registro Agencia</h1>
+  </header>
+  <div class="container">
+    <mat-card>
+      <mat-card-content>
+        <mat-horizontal-stepper [linear]="isLinear" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup" (ngSubmit)="saveStep1()">
+              <ng-template matStepLabel>Información Básica</ng-template>
+              <mat-form-field appearance="fill">
+                <mat-label>Nombre Agencia</mat-label>
+                <input matInput formControlName="nomAge" placeholder="Nombre Agencia" required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Tipo de Agencia</mat-label>
+                <input matInput formControlName="TipAge" placeholder="Tipo de Agencia" required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="emaAge" placeholder="name@example.com" required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Teléfono</mat-label>
+                <input matInput type="tel" formControlName="telAge" placeholder="Teléfono" required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Facebook</mat-label>
+                <input matInput type="url" formControlName="facebook" placeholder="Facebook URL">
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Twitter</mat-label>
+                <input matInput type="url" formControlName="twitter" placeholder="Twitter URL">
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Instagram</mat-label>
+                <input matInput type="url" formControlName="instagram" placeholder="Instagram URL">
+              </mat-form-field>
+              <button mat-button matStepperNext type="button">Next</button>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" label="Dirección">
+            <form [formGroup]="secondFormGroup" (ngSubmit)="saveStep2()">
+              <mat-form-field appearance="fill">
+                <mat-label>Estado</mat-label>
+                <input matInput formControlName="estado" placeholder="Estado" required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Municipio</mat-label>
+                <input matInput formControlName="municipio" placeholder="Municipio" required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Codigo Postal</mat-label>
+                <input matInput formControlName="codigoPostal" placeholder="C.P" required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Localidad</mat-label>
+                <input matInput formControlName="localidad" placeholder="Localidad" required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Calle</mat-label>
+                <input matInput formControlName="calle" placeholder="Calle" required>
+              </mat-form-field>
+              <button mat-button matStepperPrevious type="button">Back</button>
+              <button mat-button type="submit">Save</button>
+            </form>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <footer>
+    <p>&copy; 2024 Si. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

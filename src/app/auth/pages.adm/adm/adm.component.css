@@ -1,0 +1,71 @@
+/* Estilo para el contenedor del sidenav */
+mat-sidenav-container {
+  height: 100vh;
+}
+
+/* Estilo para el sidenav */
+mat-sidenav {
+  background-color: #ffffff; /* Color de fondo del sidenav */
+  color: #000000; /* Color del texto en el sidenav */
+}
+
+/* Estilo para la toolbar del sidenav */
+mat-toolbar {
+  background-color: #0ea88f; /* Color de fondo de la toolbar */
+  color: #ffffff; /* Color del texto en la toolbar */
+}
+
+/* Estilo para el contenido principal */
+.content {
+  padding: 16px; /* Espaciado alrededor del contenido principal */
+}
+
+/* Espaciado entre el botón de menú y el contenido en la toolbar */
+.spacer {
+  flex: 1 1 auto; /* Alinea los elementos hacia los extremos */
+}
+
+/* Estilo para los items del menú lateral */
+mat-list-item {
+  padding: 12px 16px; /* Espaciado interno para los items del menú */
+  cursor: pointer; /* Cambia el cursor al pasar sobre los items del menú */
+}
+
+/* Estilo para los íconos dentro de los items del menú */
+mat-icon {
+  margin-right: 8px; /* Espaciado a la derecha del ícono */
+}
+
+/* Estilo para los ítems de la toolbar */
+mat-toolbar mat-list-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px; /* Aumenta el tamaño del botón */
+  cursor: pointer;
+}
+
+/* Estilo para los íconos dentro de los ítems de la toolbar */
+mat-toolbar mat-list-item mat-icon {
+  font-size: 24px; /* Aumenta el tamaño del ícono */
+  margin-right: 12px; /* Aumenta el espaciado a la derecha del ícono */
+}
+
+/* Estilo para el texto dentro de los ítems de la toolbar */
+mat-toolbar mat-list-item span {
+  font-size: 16px; /* Ajusta el tamaño del texto */
+}
+
+/* Alinea el ítem de salir a la derecha dentro de la toolbar */
+mat-toolbar .spacer {
+  flex: 1 1 auto; /* Utiliza un espaciador para empujar el ítem de salir a la derecha */
+}
+
+/* Estilo opcional para el botón de menú en la toolbar */
+mat-icon-button {
+  color: #ffffff; /* Cambia el color del ícono del botón de menú */
+}
+
+/* Asegura que el contenido del router outlet se alinee correctamente */
+router-outlet {
+  display: block;
+}
