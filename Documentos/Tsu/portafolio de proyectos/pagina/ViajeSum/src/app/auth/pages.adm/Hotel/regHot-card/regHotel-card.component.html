@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ hotel.nombreHotel }}</mat-card-title>
+    <mat-card-subtitle>{{ hotel.descripcion }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  
+  <!-- Mostrar imagen del hotel si está disponible -->
+  <div *ngIf="hotel.imageUrl">
+    <img mat-card-image [src]="hotel.imageUrl" [alt]="hotel.nombreHotel" class="image-preview">
+  </div>
+  <ng-template #noImage>
+    <img mat-card-image src="assets/default-image.jpg" [alt]="hotel.nombreHotel" class="image-preview">
+  </ng-template>
+  
+  <mat-card-content>
+    <p>Calificación: {{ hotel.calificacion }}</p>
+    <p>Número de Habitaciones: {{ hotel.numeroHabitacion }}</p>
+    <p>Costo: {{ hotel.costo | currency }}</p>
+  </mat-card-content>
+  
+  <mat-card-actions>
+    <span class="spacer"></span>
+    <button mat-button mat-raised [routerLink]="['/hotels', hotel.idHotel]">
+      <mat-icon>more_horiz</mat-icon>
+      Más
+    </button>
+  </mat-card-actions>
+</mat-card>

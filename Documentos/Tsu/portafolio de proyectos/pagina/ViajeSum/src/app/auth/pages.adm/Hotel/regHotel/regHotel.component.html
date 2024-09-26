@@ -1,0 +1,29 @@
+<form [formGroup]="firstFormGroup" (ngSubmit)="saveStep1()">
+  <ng-template matStepLabel>Información Básica</ng-template>
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre Hotel</mat-label>
+    <input matInput formControlName="nombreHotel" placeholder="Nombre Hotel" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Descripcion</mat-label>
+    <input matInput formControlName="descripcion" placeholder="descripcion" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Calificación</mat-label>
+    <input matInput formControlName="calificacion" type="number" step="0.01" min="0" max="5" placeholder="Calificación">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Número de Habitaciones</mat-label>
+    <input matInput formControlName="numeroHabitacion" type="number" placeholder="Número de Habitaciones">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Costo</mat-label>
+    <input matInput formControlName="costo" type="number" step="0.01" placeholder="Costo">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>URL de la Imagen</mat-label>
+    <input matInput formControlName="imageUrl" placeholder="URL de la imagen">
+  </mat-form-field>
+
+  <button mat-button type="submit">Guardar</button>
+</form>

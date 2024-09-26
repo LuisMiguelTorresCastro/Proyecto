@@ -1,0 +1,78 @@
+/* Contenedor del menú lateral */
+.mat-sidenav {
+  background: #e1e6e5;
+  color: #fff;
+}
+
+.mat-toolbar {
+  background: #017e5f;
+}
+
+.mat-toolbar.mat-dark {
+  background: #017e5f;
+}
+
+.mat-list-item {
+  color: #fff;
+}
+
+.mat-list-item:hover {
+  background: #004d40;
+}
+
+.mat-list-item.mat-list-item-active {
+  background: #00332e;
+}
+
+/* Estilo para el menú superior */
+.nav {
+  width: 100%;
+  background: #00695c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  transition: all 0.5s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 30px;
+  color: #fff;
+  font-weight: bolder;
+  margin-left: 8px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s ease;
+  font-size: 14px;
+}
+
+.menu li a mat-icon {
+  margin-right: 4px;
+}
+
+.menu li a:hover {
+  padding: 5px;
+  background: #fff;
+  color: #f7eeee;
+  border-radius: 15px;
+}

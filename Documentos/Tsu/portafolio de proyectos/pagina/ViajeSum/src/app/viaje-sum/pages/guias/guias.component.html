@@ -1,0 +1,33 @@
+<h1>Guias</h1>
+<mat-divider></mat-divider>
+<div class="card-grid">
+  <div *ngFor="let guia of guias" class="card-item">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ guia.nombreGuias }}</mat-card-title>
+        <mat-card-subtitle>{{ guia.descripcion }}</mat-card-subtitle>
+      </mat-card-header>
+      <div *ngIf="guia.ImageUrl; else noImage">
+        <img mat-card-image [src]="guia.ImageUrl" [alt]="guia.nombreGuias" class="image-preview">
+      </div>
+      <ng-template #noImage>
+        <img mat-card-image src="assets/default-image.jpg" [alt]="guia.nombreGuias" class="image-preview">
+      </ng-template>
+      <mat-card-content>
+        <p>{{ guia.descripcion}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <span class="spacer"></span>
+        <button mat-button mat-raised [routerLink]="['/guias', guia.idguia]">
+          <mat-icon>more_horiz</mat-icon>
+          Más
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <footer>
+    <p>&copy; 2024 Si. Todos los derechos reservados.</p>
+    <!-- Pie de página con derechos de autor -->
+  </footer>
+</div>
+

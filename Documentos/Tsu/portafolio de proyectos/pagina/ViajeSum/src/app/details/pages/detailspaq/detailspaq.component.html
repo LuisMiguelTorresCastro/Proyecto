@@ -1,0 +1,21 @@
+<div class="detalles-paquete-container">
+  <h2>Detalles del Paquete</h2>
+
+  <div *ngIf="paquete; else loading">
+    <h3>{{ paquete.nombre }}</h3>
+    <p><strong>Descripción:</strong> {{ paquete.descripcion }}</p>
+    <p><strong>Duración:</strong> {{ paquete.duracion }}</p>
+    <p><strong>Precio:</strong> ${{ paquete.precio }}</p>
+
+    <h4>Incluye:</h4>
+    <ul>
+      <li *ngFor="let item of paquete.incluye">{{ item }}</li>
+    </ul>
+    
+    <button class="btn-comprar">Iniciar proceso de compra</button>
+  </div>
+
+  <ng-template #loading>
+    <p>Cargando detalles del paquete...</p>
+  </ng-template>
+</div>

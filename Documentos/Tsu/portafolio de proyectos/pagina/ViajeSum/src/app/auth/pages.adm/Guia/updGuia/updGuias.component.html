@@ -1,0 +1,29 @@
+<mat-horizontal-stepper [linear]="isLinear">
+  <mat-step label="Actualizar Información Básica">
+    <form [formGroup]="updFormGroup" (ngSubmit)="openConfirmDialog()">
+      <!-- Seleccionar Guía -->
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccionar Guía</mat-label>
+        <mat-select (selectionChange)="onGuiaSelected($event.value)">
+          <mat-option *ngFor="let guia of guias" [value]="guia.nombreGuias">
+            {{ guia.nombreGuias }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Nombre de la Guía -->
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre de la Guía</mat-label>
+        <input matInput formControlName="nombreGuias" placeholder="Nombre de la Guía">
+      </mat-form-field>
+
+      <!-- Descripción -->
+      <mat-form-field appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput formControlName="descripcion" placeholder="Descripción"></textarea>
+      </mat-form-field>
+
+      <button mat-button type="submit">Actualizar</button>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

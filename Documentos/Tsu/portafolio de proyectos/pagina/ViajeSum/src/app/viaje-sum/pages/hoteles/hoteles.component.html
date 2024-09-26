@@ -1,0 +1,31 @@
+<h1>Hoteles</h1>
+<mat-divider></mat-divider>
+
+<div class="card-grid">
+  <div *ngFor="let hotel of hoteles" class="card-item">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ hotel.nombreHotel }}</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <div *ngIf="hotel.imageUrl; else noImage">
+        <img mat-card-image [src]="hotel.imageUrl" [alt]="hotel.nombreHotel" class="image-preview">
+      </div>
+      <ng-template #noImage>
+        <img mat-card-image src="assets/default-image.jpg" [alt]="hotel.nombreHotel" class="image-preview">
+      </ng-template>
+      <mat-card-content>
+        <p><strong>Descripción:</strong> {{ hotel.descripcion }}</p>
+        <p><strong>Calidicacion:</strong> {{ hotel.calificacion }} estrellas</p>
+        <p><strong>Numero de Habitaciones:</strong> {{ hotel.numeroHabitacion }}</p>
+        <p><strong>Costo:</strong> {{ hotel.costo | currency }}</p>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 Si. Todos los derechos reservados.</p>
+  <!-- Pie de página con derechos de autor -->
+</footer>

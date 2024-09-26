@@ -1,0 +1,16 @@
+<div class="detalles-experiencia-container">
+  <h2>Detalles de la Experiencia</h2>
+
+  <div *ngIf="experiencia; else loading">
+    <h3>{{ experiencia.nombre }}</h3>
+    <p><strong>Descripción:</strong> {{ experiencia.descripcion }}</p>
+    <p><strong>Duración:</strong> {{ experiencia.duracion }}</p>
+    <p><strong>Precio:</strong> ${{ experiencia.precio }}</p>
+    
+    <button class="btn-comprar">Iniciar proceso de compra</button>
+  </div>
+
+  <ng-template #loading>
+    <p>Cargando detalles de la experiencia...</p>
+  </ng-template>
+</div>

@@ -1,0 +1,23 @@
+<form [formGroup]="transportistaFormGroup" (ngSubmit)="openConfirmDialog()">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre del Transportista</mat-label>
+    <input matInput formControlName="nombreTransportista" placeholder="Nombre del Transportista" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Costo</mat-label>
+    <input matInput formControlName="costo" type="number" placeholder="Costo" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput formControlName="descripcion" placeholder="Descripción" rows="4"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Teléfono</mat-label>
+    <input matInput formControlName="telefono" placeholder="Teléfono" type="tel">
+  </mat-form-field>
+
+  <button mat-button type="submit">Guardar</button>
+</form>

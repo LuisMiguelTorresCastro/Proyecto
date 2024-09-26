@@ -1,0 +1,58 @@
+<div class="transferForm"></div>
+  <!-- Datos de la cuenta a la que llegará la transferencia -->
+  <div class="account-info">
+    <h3>Datos para la Transferencia</h3>
+    <p><strong>Banco:</strong>BanCoppel</p>
+    <p><strong>Número de Cuenta:</strong>4169161425058806</p>
+    <p><strong>Nombre del Titular:</strong>Luis Manuel Lopez Cano</p>
+  </div>
+  
+  <form [formGroup]="transferenciaForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="nombreTitular">Nombre del Titular</label>
+      <input type="text" id="nombreTitular" formControlName="nombreTitular" placeholder="Nombre del Titular" required>
+      <div *ngIf="transferenciaForm.get('nombreTitular')?.invalid && transferenciaForm.get('nombreTitular')?.touched">
+        El nombre del titular es requerido.
+      </div>
+    </div>
+  
+    <div>
+      <label for="banco">Banco</label>
+      <input type="text" id="banco" formControlName="banco" placeholder="Nombre del Banco" required>
+      <div *ngIf="transferenciaForm.get('banco')?.invalid && transferenciaForm.get('banco')?.touched">
+        El nombre del banco es requerido.
+      </div>
+    </div>
+  
+    <div>
+      <label for="numeroCuenta">Número de Cuenta</label>
+      <input type="text" id="numeroCuenta" formControlName="numeroCuenta" placeholder="Número de Cuenta" required minlength="10">
+      <div *ngIf="transferenciaForm.get('numeroCuenta')?.invalid && transferenciaForm.get('numeroCuenta')?.touched">
+        El número de cuenta es requerido y debe tener al menos 10 caracteres.
+      </div>
+    </div>
+  
+    <div>
+      <label for="monto">Monto Total</label>
+      <input type="text" id="monto" formControlName="monto" [disabled]="true">
+    </div>    
+  
+    <div>
+      <label for="cvv">CVV</label>
+      <input type="text" id="cvv" formControlName="cvv" placeholder="CVV" required minlength="3" maxlength="4">
+      <div *ngIf="transferenciaForm.get('cvv')?.invalid && transferenciaForm.get('cvv')?.touched">
+        El CVV es requerido y debe tener 3 o 4 dígitos.
+      </div>
+    </div>
+  
+    <div>
+      <label for="fechaVencimiento">Fecha de Vencimiento</label>
+      <input type="month" id="fechaVencimiento" formControlName="fechaVencimiento" required>
+      <div *ngIf="transferenciaForm.get('fechaVencimiento')?.invalid && transferenciaForm.get('fechaVencimiento')?.touched">
+        La fecha de vencimiento es requerida.
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="transferenciaForm.invalid">Realizar Pago</button>
+  </form>
+  

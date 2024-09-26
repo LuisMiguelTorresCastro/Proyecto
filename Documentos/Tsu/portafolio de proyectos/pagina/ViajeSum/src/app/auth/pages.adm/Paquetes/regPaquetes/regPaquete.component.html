@@ -1,0 +1,53 @@
+<!-- regPaquete.component.html -->
+<div class="container">
+  <form [formGroup]="firstFormGroup" (ngSubmit)="openConfirmDialog()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre del Paquete</mat-label>
+      <input matInput formControlName="nombrePaquete" required />
+      <mat-error *ngIf="firstFormGroup.get('nombrePaquete')?.hasError('required')">
+        El nombre del paquete es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Descripción</mat-label>
+      <textarea matInput formControlName="descripcion" required></textarea>
+      <mat-error *ngIf="firstFormGroup.get('descripcion')?.hasError('required')">
+        La descripción es obligatoria.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Categoría</mat-label>
+      <input matInput formControlName="categoria" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Costo</mat-label>
+      <input matInput formControlName="costo" type="number" step="0.01" min="0" />
+      <mat-error *ngIf="firstFormGroup.get('costo')?.hasError('min')">
+        El costo debe ser un número positivo.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Fechas</mat-label>
+      <input matInput formControlName="fechas" type="date" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo</mat-label>
+      <input matInput formControlName="tipo" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>URL de Imagen</mat-label>
+      <input matInput formControlName="imageUrl" />
+      <mat-error *ngIf="firstFormGroup.get('imageUrl')?.hasError('pattern')">
+        La URL de la imagen debe ser válida.
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Guardar Paquete</button>
+  </form>
+</div>

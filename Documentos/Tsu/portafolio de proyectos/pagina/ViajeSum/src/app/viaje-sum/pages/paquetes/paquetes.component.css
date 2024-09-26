@@ -1,0 +1,136 @@
+/* Estilos generales */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para la sección de Paquetes */
+h1 {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  text-align: center;
+  color: #8916e7;
+}
+
+mat-divider {
+  margin: 20px auto;
+  width: 80%;
+  background-color: #8916e7; /* Color similar al de la sección de héroes */
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  flex-grow: 1; /* Hace que la cuadrícula de cartas ocupe el espacio disponible */
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+mat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-header {
+  background-color: #f3f3f3;
+  padding: 16px;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  color: #070707;
+}
+
+mat-card-subtitle {
+  font-size: 1.2rem;
+  color: #8916e7;
+}
+
+.image-preview {
+  max-height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+mat-card-content {
+  padding: 16px;
+  text-align: center;
+}
+
+mat-card-content p {
+  margin: 10px 0;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+button {
+  background-color: #8916e7;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #7205d0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* Footer sticky */
+footer {
+  background-color: #00796b;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: auto; /* Empuja el footer al final */
+}
+
+/* Asegura que las tarjetas tengan márgenes consistentes en pantallas más pequeñas */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  mat-card {
+    margin: 0 10px;
+  }
+}

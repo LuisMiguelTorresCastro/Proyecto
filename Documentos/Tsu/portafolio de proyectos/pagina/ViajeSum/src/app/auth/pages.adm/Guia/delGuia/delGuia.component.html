@@ -1,0 +1,17 @@
+<mat-horizontal-stepper [linear]="true">
+  <mat-step label="Eliminar Guía">
+    <form [formGroup]="deleteFormGroup" (ngSubmit)="deleteGuia()">
+      <!-- Seleccionar Guía -->
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccionar Guía</mat-label>
+        <mat-select formControlName="nomGuias">
+          <mat-option *ngFor="let guia of guias" [value]="guia.nombreGuias">
+            {{ guia.nombreGuias }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-button type="submit">Eliminar</button>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

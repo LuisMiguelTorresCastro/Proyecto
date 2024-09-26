@@ -1,0 +1,41 @@
+<mat-horizontal-stepper [linear]="isLinear">
+  <mat-step label="Actualizar Información Básica">
+    <form [formGroup]="updFormGroup" (ngSubmit)="openConfirmDialog()">
+      <!-- Seleccionar Transportista -->
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccionar Transportista</mat-label>
+        <mat-select (selectionChange)="onTransportistaSelected($event.value)">
+          <mat-option *ngFor="let transportista of transportistas" [value]="transportista.nombreTransportista">
+            {{ transportista.nombreTransportista }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Nombre del Transportista -->
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre del Transportista</mat-label>
+        <input matInput formControlName="nombreTransportista" placeholder="Nombre del Transportista">
+      </mat-form-field>
+
+      <!-- Descripción -->
+      <mat-form-field appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput formControlName="descripcion" placeholder="Descripción"></textarea>
+      </mat-form-field>
+
+      <!-- Costo -->
+      <mat-form-field appearance="fill">
+        <mat-label>Costo</mat-label>
+        <input matInput formControlName="costo" type="number" step="0.01" placeholder="Costo">
+      </mat-form-field>
+
+      <!-- Teléfono -->
+      <mat-form-field appearance="fill">
+        <mat-label>Teléfono</mat-label>
+        <input matInput formControlName="telefono" type="tel" placeholder="Teléfono">
+      </mat-form-field>
+
+      <button mat-button type="submit">Actualizar</button>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
